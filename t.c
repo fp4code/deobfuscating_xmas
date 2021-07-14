@@ -13,9 +13,7 @@ int f(int t, int c, char *a)
 	  return f(-65, c, a+1);
      }
      if (t < 0)
-	  return f((*a == '/') + t, c, a+1);
-     if (t == 1)
-	  return f(2, 2, "%s");
+	  return f((*a == '/') + t, c, a + 1);
      if (t == 0)
 	  return (*a == '/' || f(0,
 				 f(-61, *a, S2),
