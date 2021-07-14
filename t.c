@@ -38,11 +38,12 @@ int f(int t,int c,char *a)
 	     S1) 
 	  :
 	  t < -50
-	  ? c == *a
 	  ?
-	  putchar(32[a-1])
-	  :
-	  f(-65, c, a+1)
+	  ((c == *a)
+	   ?
+	   putchar(32[a-1])
+	   :
+	   f(-65, c, a+1))
 	  :
 	  f((*a == '/') + t, c, a+1) 
 	  :
