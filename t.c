@@ -7,7 +7,7 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 int fl(int t, int c, char *a)
 {
      if (c == *a)
-	  return putchar(32[a-1]);
+	  return putchar(a[31]);
      return fl(-65, c, a+1);
 }
 
