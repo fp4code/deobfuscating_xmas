@@ -21,19 +21,18 @@ int f(int t, int c, char *a)
 	  }
 	  return 16;
      }
-     if (t < 0) {
-	  if (t < -72)
-	       return f(c, t, S1);
-	  if (t < -50) {
-	       if (c == *a)
-		    return putchar(32[a-1]);
-	       return f(-65, c, a+1);
-	  }
-	  return f((*a == '/') + t, c, a+1);
+     if (t < -72)
+	  return f(c, t, S1);
+     if (t < -50) {
+	  if (c == *a)
+	       return putchar(32[a-1]);
+	  return f(-65, c, a+1);
      }
-     if (0 < t)
+     if (t < 0)
+	  return f((*a == '/') + t, c, a+1);
+     if (t > 0)
 	  return f(2, 2, "%s");
-     return (*a == '/' || f(0, 
+     return (*a == '/' || f(0,
 			    f(-61, *a, S2),
 			    a+1));
 }
