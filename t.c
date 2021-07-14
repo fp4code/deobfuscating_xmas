@@ -6,15 +6,12 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 int f(int t, int c, char *a)
 {
      if (t > 1) {
-	  ((t < 3)
-	   ?
-	   f(-79,
-	     -13,
-	     a + f(-87,
-		   1 - c,
-		   a + f(-86, 0, a+1)))
-	   :
-	   1);
+	  if (t < 3)
+	       f(-79,
+		 -13,
+		 a + f(-87,
+		       1 - c,
+		       a + f(-86, 0, a+1)));
 	  return (((t < c)
 		   ?
 		   f(t + 1, c, a)
