@@ -12,11 +12,8 @@ int f(int t, int c, char *a)
 		 a + f(-87,
 		       1 - c,
 		       a + f(-86, 0, a+1)));
-	  ((t < c)
-	   ?
-	   f(t + 1, c, a)
-	   :
-	   3);
+	  if (t < c)
+	       f(t + 1, c, a);
 	  return ((f(-94, -27 + t, a) && t == 2)
 		  ?
 		  ((c < 13)
