@@ -3,33 +3,33 @@
 char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/+k#;q#'r}eKK#}w'r}eKK{nl]'/#;#q#n'){)#}w'){){nl]'/+#n';d}rw' i;# ){nl]!/n{n#'; r{#w'r nc{nl]'/#{l,+'K {rw' iK{;[{nl]'/w#q#n'wk nw' iwk{KK{nl]!/w{%'l' i; :{nl]'/*{q#'ld;r'}{nlwb!/*de}'c ;;{nl'-{}rw]'/+,}##'*}#nc,',#nw]'/+kd'+e}+;#'rdq#w! nr'/ ') }+}{rl#'{n' ')# }'+}##(!!/";
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
-int f(int t,int c,char *a)
+int f(int t, int c, char *a)
 {
-     if (t > 1)	    
-	  return  ((t < 3)
+     if (t > 1) {
+	  ((t < 3)
+	   ?
+	   f(-79,
+	     -13,
+	     a + f(-87,
+		   1 - c,
+		   a + f(-86, 0, a+1)))
+	   :
+	   1);
+	  return (((t < c)
 		   ?
-		   f(-79,
-		     -13,
-		     a + f(-87,
-			   1 - c,
-			   a + f(-86, 0, a+1)))
+		   f(t + 1, c, a)
 		   :
-		   1),
-	       ((t < c)
-		?
-		f(t + 1, c, a)
-		:
-		3),
-	       ((f(-94, -27 + t, a) && t == 2)
-		?
-		((c < 13)
-		 ?
-		 f(2, c+1, "%s %d %d\n")
-		 :
-		 9)
-		:
-		16);
-     else
+		   3),
+		  ((f(-94, -27 + t, a) && t == 2)
+		   ?
+		   ((c < 13)
+		    ?
+		    f(2, c+1, "%s %d %d\n")
+		    :
+		    9)
+		   :
+		   16));
+     } else
 	  return ((t < 0)
 		  ?
 		  ((t < -72)
