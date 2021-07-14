@@ -13,7 +13,10 @@ int f(int t, int c, char *a)
 	  return f(-65, c, a+1);
      }
      if (t < 0)
-	  return f((*a == '/') + t, c, a + 1);
+	  if (*a == '/')
+	      return f(t + 1, c, a + 1);
+	  else
+	      return f(t, c, a + 1);
      if (t == 0)
 	  if (*a == '/')
 	       return 1;
