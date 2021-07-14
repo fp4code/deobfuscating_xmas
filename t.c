@@ -4,7 +4,7 @@ char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 
-int f0(int c, char *a)
+int f0(char *a)
 {
      if (*a == '/') {
 	  return 1;
@@ -12,7 +12,7 @@ int f0(int c, char *a)
      char *s = S2;
      while (*a != *s++);
      putchar(s[30]);
-     return f0(0, a + 1); // unused first argument
+     return f0(a + 1);
 }
      
 
@@ -25,10 +25,10 @@ int f(int t, int c, char *a)
 	      return f(t, c, a + 1);
 	  }
      if (t == 0)
-	  return f0(c, a);
+	  return f0(a);
      if (t < 3) {
 	  // passe 12 fois ici
-	  f0(-86, S1);
+	  f0(S1);
 	  f(1 - c, -87, S1);
 	  f(-13, -79, S1);
      }
