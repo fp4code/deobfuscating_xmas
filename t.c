@@ -17,11 +17,9 @@ void f0(char *a)
 
 void f(int t, int c, char *a)
 {
-     if (t < 0) {
-	  do {
-	       while(*a++ != '/');
-	       t += 1;
-	  } while (t < 0);
+     while (t < 0) {
+	  while(*a++ != '/');
+	  t += 1;
      }
      if (t == 0) {
 	  f0(a);
