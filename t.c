@@ -15,11 +15,10 @@ int f(int t, int c, char *a)
 	  if (t < c)
 	       f(t + 1, c, a);
 	  if (f(-94, -27 + t, a) && t == 2)
-	       return ((c < 13)
-		       ?
-		       f(2, c+1, "%s %d %d\n")
-		       :
-		       9);
+	       if (c < 13)
+		    return f(2, c+1, "%s %d %d\n");
+	       else
+		    return 9;
 	  else
 	       return 16;
      } else
