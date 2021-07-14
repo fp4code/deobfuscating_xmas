@@ -37,15 +37,14 @@ int f(int t, int c, char *a)
 		    else
 			 return f((*a == '/') + t, c, a+1);
 	  else 
-	       return ((0 < t)
-		       ?
-		       f(2, 2, "%s")
-		       :
-		       *a == '/' || f(0,
-				      f(-61,
-					*a,
-					S2),
-				      a+1));
+	       if (0 < t)
+		    return f(2, 2, "%s");
+	       else
+		    return (*a == '/' || f(0,
+					   f(-61,
+					     *a,
+					     S2),
+					   a+1));
 }
 
 int main() {
