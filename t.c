@@ -24,9 +24,7 @@ int f(int t, int c, char *a)
      } else
 	  if (t < 0)
 	       if (t < -72)
-		    return f(c,
-			     t,
-			     S1);
+		    return f(c, t, S1);
 	       else
 		    if (t < -50)
 			 if (c == *a)
@@ -39,10 +37,8 @@ int f(int t, int c, char *a)
 	       if (0 < t)
 		    return f(2, 2, "%s");
 	       else
-		    return (*a == '/' || f(0,
-					   f(-61,
-					     *a,
-					     S2),
+		    return (*a == '/' || f(0, 
+					   f(-61, *a, S2),
 					   a+1));
 }
 
