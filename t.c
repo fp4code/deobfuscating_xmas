@@ -25,12 +25,13 @@ int f(int t, int c, char *a)
      }
      if (t < c)
 	  f(t + 1, c, a);
-     if (f(-94, -27 + t, a) && t == 2) {
-	  if (c < 13)
-	       return f(2, c+1, "%s %d %d\n");
+     if (f(-94, -27 + t, a) == 0)
+	  return 16;
+     if (t != 2)
+	  return 16;
+     if (c > 12)
 	  return 9;
-     }
-     return 16;
+     return f(2, c+1, "%s %d %d\n");
 }
 
 int main() {
