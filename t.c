@@ -18,11 +18,6 @@ void f0(char *a)
 void f(int t, int c, char *a)
 {
      if (t < 0) {
-	  if (*a == '/') {
-	      f(t + 1, c, a + 1);
-	      return;
-	  }
-	  a += 1;
 	  while(*a++ != '/');
 	  f(t + 1, c, a);
 	  return;
