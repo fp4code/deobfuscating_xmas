@@ -3,16 +3,6 @@
 char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/+k#;q#'r}eKK#}w'r}eKK{nl]'/#;#q#n'){)#}w'){){nl]'/+#n';d}rw' i;# ){nl]!/n{n#'; r{#w'r nc{nl]'/#{l,+'K {rw' iK{;[{nl]'/w#q#n'wk nw' iwk{KK{nl]!/w{%'l' i; :{nl]'/*{q#'ld;r'}{nlwb!/*de}'c ;;{nl'-{}rw]'/+,}##'*}#nc,',#nw]'/+kd'+e}+;#'rdq#w! nr'/ ') }+}{rl#'{n' ')# }'+}##(!!/";
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
-
-void fl(int c, char *a)
-{
-     // fprintf(stderr, "YES\n");
-     while (c != *a++);
-     putchar(a[30]);
-}
-
-
-
 int f(int t, int c, char *a)
 {
      if (t < -72)
@@ -27,8 +17,9 @@ int f(int t, int c, char *a)
 	  if (*a == '/')
 	       return 1;
 	  else {
-	       // fprintf(stderr, "Here a call 2\n");
-	       fl(*a, S2);
+	       char *s = S2;
+	       while (*a != *s++);
+	       putchar(s[30]);
 	       return f(0, 0, a + 1); // unused second argument
 	  }
      if (t < 3) {
