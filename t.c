@@ -38,7 +38,7 @@ void f(int t, int c, char *a)
      if (t < c) {
 	  f(t + 1, c, a);
      }
-     f(-27 + t, -94, S1);
+     f0(skip_slash(27 - t, S1));
      if (t == 2 && c <= 12)
 	  // 11 times here
 	  f(2, c + 1, "%s %d %d\n");
