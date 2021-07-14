@@ -15,9 +15,12 @@ int f(int t, int c, char *a)
      if (t < 0)
 	  return f((*a == '/') + t, c, a + 1);
      if (t == 0)
-	  return (*a == '/' || f(0,
-				 f(-61, *a, S2),
-				 a+1));
+	  if (*a == '/')
+	       return 1;
+	  else {
+	       int cc = f(-61, *a, S2);
+	       return f(0, cc, a + 1);
+	  }
      if (t < 3) {
 	  f(0, -86, S1);
 	  f(1 - c, -87, S1);
