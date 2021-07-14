@@ -23,13 +23,11 @@ char *skip_slash(int n, char *a)
      return a;
 }
 
-
 void fcommon(int t, int c, char *a)
 {
-     if (t < c) {
-	  fcommon(t + 1, c, a);
+     for (int i = 25 - c; i < 26; i++) {
+	  f0(skip_slash(i, S1));
      }
-     f0(skip_slash(25 - t, S1));
 }
 
 void fmain(int c, char *a)
