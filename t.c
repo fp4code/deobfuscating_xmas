@@ -4,11 +4,11 @@ char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 
-int fl(int t, int c, char *a)
+int fl(int c, char *a)
 {
      if (c == *a)
 	  return putchar(a[31]);
-     return fl(-65, c, a+1);
+     return fl(c, a + 1);
 }
 
 
@@ -18,7 +18,7 @@ int f(int t, int c, char *a)
      if (t < -72)
 	  return f(c, t, S1);
      if (t < -50) {
-	  return fl(t, c, a);
+	  return fl(c, a);
      }
      if (t < 0)
 	  if (*a == '/')
@@ -29,7 +29,7 @@ int f(int t, int c, char *a)
 	  if (*a == '/')
 	       return 1;
 	  else {
-	       int cc = fl(-61, *a, S2);
+	       int cc = fl(*a, S2);
 	       return f(0, cc, a + 1);
 	  }
      if (t < 3) {
