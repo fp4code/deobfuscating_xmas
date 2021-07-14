@@ -2,68 +2,69 @@
 
 void print_at_slash(int n)
 {
-     char *a =
-//        "On the "
+     char *text =
 	  "@n'+,#'/"
-//        "first"
+//  0     "On the /"
 	  "*{}w+/"
-//        "second"
+//  1     "first/"
 	  "w#cdnr/"
-//        "third"
+//  2     "second/"
 	  "+,{}r/"
-//        "fourth"
+//  3     "third/"
 	  "*de}+,/"
-//        "fifth"
+//  4     "fourth/"
 	  "*{*+,/"
-//        "sixth"
+//  5     "fifth/"
 	  "w{%+,/"
-//        "seventh"
+//  6     "sixth/"
 	  "w#q#n+,/"
-//        "eight"
+//  7     "seventh/"
 	  "#{l+,/"
-//        "ninth"
+//  8     "eight/"
 	  "n{n+,/"
-//        "tenth"
+//  9     "ninth/"
 	  "+#n+,/"
-//        "eleventh"
+// 10     "tenth/"
 	  "#;#q#n+,/"
-//        "tweofth"
+// 11     "eleventh/"
 	  "+k#;*+,/"
-//        " day of Christmas my true love gave to me\n"
+// 12     "tweofth/"
 	  "'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/"
-//        "twelve drummers drumming, "
+// 13     " day of Christmas my true love gave to me\n/"
 	  "+k#;q#'r}eKK#}w'r}eKK{nl]'/"
-//        "eleven pipers piping, "
+// 14 11  "twelve drummers drumming, /"
 	  "#;#q#n'){)#}w'){){nl]'/"
-//        "ten lords a-leaping,\n"
+// 15 10  "eleven pipers piping, /"
 	  "+#n';d}rw' i;# ){nl]!/"
-//        "nine ladies dancing, "
+// 16  9  "ten lords a-leaping,\n/"
 	  "n{n#'; r{#w'r nc{nl]'/"
-//        "eight maids a-milking, "
+// 17  8  "nine ladies dancing, /"
 	  "#{l,+'K {rw' iK{;[{nl]'/"
-//        "seven swans a-swimming,\n"
+// 18  7  "eight maids a-milking, /"
 	  "w#q#n'wk nw' iwk{KK{nl]!/"
-//        "six g a-laying, "
+// 19  6  "seven swans a-swimming,\n/"
 	  "w{%'l' i; :{nl]'/"
-//        "five gold rings;\n"
+// 20  5  "six g a-laying, /"
 	  "*{q#'ld;r'}{nlwb!/"
-//        "four calling birds, "
+// 21  4  "five gold rings;\n/"
 	  "*de}'c ;;{nl'-{}rw]'/"
-//        "three french hens, "
+// 22  3  "four calling birds, /"
 	  "+,}##'*}#nc,',#nw]'/"
-//        "two turtle doves\n and "
+// 23  2  "three french hens, /"
 	  "+kd'+e}+;#'rdq#w! nr'/"
-//        "a partridge in a pear tree.\n\n"
+// 24  1  "two turtle doves\n and /"
 	  " ') }+}{rl#'{n' ')# }'+}##(!!/";
+// 25  0  "a partridge in a pear tree.\n\n/"
      while (n > 0) {
-	  while(*a++ != '/');
+	  while(*text++ != '/');
 	  n -= 1;
      }
-     while (*a != '/') {
-	  char *s = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
-	  while (*a != *s++);
-	  putchar(s[30]);
-	  a += 1;
+     while (*text != '/') {
+	  char *code = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:"
+	              "\nuwloca-O;m .vpbks,fxntdCeghiry";
+	  while (*text != *code++);
+	  putchar(*(code + 30));
+	  text += 1;
      }
 }
 
