@@ -6,9 +6,8 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 int fl(int c, char *a)
 {
-     if (c != *a)
-	  return fl(c, a + 1);
-     return putchar(a[31]);
+     while (c != *a++);
+     return putchar(a[30]);
 }
 
 
