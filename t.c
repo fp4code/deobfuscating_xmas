@@ -32,8 +32,8 @@ void f(int t, int c, char *a)
      if (t < 3) {
 	  //  12 times here
 	  f0(S1);
-	  f(1 - c, -87, S1);
-	  f(-13, -79, S1);
+	  f0(skip_slash(c - 1, S1));
+	  f0(skip_slash(13, S1));
      }
      if (t < c) {
 	  f(t + 1, c, a);
