@@ -22,6 +22,7 @@ int f(int t, int c, char *a)
 	       return f(0, 0, a + 1); // unused second argument
 	  }
      if (t < 3) {
+	  // passe 12 fois ici
 	  f(0, -86, S1);
 	  f(1 - c, -87, S1);
 	  f(-13, -79, S1);
