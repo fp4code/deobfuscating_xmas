@@ -32,13 +32,14 @@ void fcommon(int t, int c, char *a)
 
 void fmain(int c, char *a)
 {
-     f0(S1);
-     f0(skip_slash(c + 1, S1));
-     f0(skip_slash(13, S1));
-     fcommon(0, c, a);
-     if (c < 11)
-	  fmain(c + 1, "%s %d %d\n");
-     return;
+     for (c = 0; c < 12; c++) {
+	  if (c != 0)
+	       a = "%s %d %d\n";
+	  f0(S1);
+	  f0(skip_slash(c + 1, S1));
+	  f0(skip_slash(13, S1));
+	  fcommon(0, c, a);
+     }
 }
 
 int main() {
