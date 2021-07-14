@@ -37,5 +37,5 @@ int f(int t, int c, char *a)
 }
 
 int main() {
-     return f(1, 0, 0);
+     return f(2, 2, "%s");
 }
