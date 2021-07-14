@@ -14,15 +14,14 @@ int f(int t, int c, char *a)
 		       a + f(-86, 0, a+1)));
 	  if (t < c)
 	       f(t + 1, c, a);
-	  return ((f(-94, -27 + t, a) && t == 2)
-		  ?
-		  ((c < 13)
-		   ?
-		   f(2, c+1, "%s %d %d\n")
-		   :
-		   9)
-		  :
-		  16);
+	  if (f(-94, -27 + t, a) && t == 2)
+	       return ((c < 13)
+		       ?
+		       f(2, c+1, "%s %d %d\n")
+		       :
+		       9);
+	  else
+	       return 16;
      } else
 	  return ((t < 0)
 		  ?
