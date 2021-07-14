@@ -15,17 +15,19 @@ void f0(char *a)
 }
      
 
-int f(int t, int c, char *a)
+void f(int t, int c, char *a)
 {
      if (t < 0)
 	  if (*a == '/') {
-	      return f(t + 1, c, a + 1);
+	      f(t + 1, c, a + 1);
+	      return;
 	  } else {
-	      return f(t, c, a + 1);
+	      f(t, c, a + 1);
+	      return;
 	  }
      if (t == 0) {
 	  f0(a);
-	  return 1; // or non-zero value
+	  return;
      }
      if (t < 3) {
 	  //  12 times here
@@ -37,15 +39,14 @@ int f(int t, int c, char *a)
 	  f(t + 1, c, a);
      }
      f(-27 + t, -94, S1);
-     if (t != 2)
-	  return 16;
-     if (c > 12)
-	  // One time here
-	  return 9;
-     // 11 times here
-     return f(2, c+1, "%s %d %d\n");
+     if (t == 2 && c <= 12)
+	  // 11 times here
+	  f(2, c + 1, "%s %d %d\n");
+     // One time here
+     return;
 }
 
 int main() {
-     return f(2, 2, "%s");
+     f(2, 2, "%s");
+     return 0;
 }
