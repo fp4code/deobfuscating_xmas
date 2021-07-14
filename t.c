@@ -29,14 +29,14 @@ void f(int t, int c, char *a)
      if (t == 0) {
 	  //  12 times here
 	  f0(S1);
-	  f0(skip_slash(c - 1, S1));
+	  f0(skip_slash(c + 1, S1));
 	  f0(skip_slash(13, S1));
      }
-     if (t + 2 < c) {
+     if (t < c) {
 	  f(t + 1, c, a);
      }
      f0(skip_slash(25 - t, S1));
-     if (t == 0 && c <= 12)
+     if (t == 0 && c < 11)
 	  // 11 times here
 	  f(0, c + 1, "%s %d %d\n");
      // One time here
@@ -44,6 +44,6 @@ void f(int t, int c, char *a)
 }
 
 int main() {
-     f(0, 2, "%s");
+     f(0, 0, "%s");
      return 0;
 }
