@@ -23,6 +23,15 @@ char *skip_slash(int n, char *a)
      return a;
 }
 
+
+void fcommon(int t, int c, char *a)
+{
+     if (t < c) {
+	  fcommon(t + 1, c, a);
+     }
+     f0(skip_slash(25 - t, S1));
+}
+
 void f(int t, int c, char *a)
 {
      // fprintf(stderr, "%d %d\n", t, c);
@@ -32,16 +41,16 @@ void f(int t, int c, char *a)
 	  f0(skip_slash(c + 1, S1));
 	  f0(skip_slash(13, S1));
      }
-     if (t < c) {
-	  f(t + 1, c, a);
-     }
-     f0(skip_slash(25 - t, S1));
+     fcommon(t, c, a);
      if (t == 0 && c < 11)
 	  // 11 times here
 	  f(0, c + 1, "%s %d %d\n");
      // One time here
      return;
 }
+
+
+
 
 int main() {
      f(0, 0, "%s");
