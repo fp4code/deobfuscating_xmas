@@ -5,22 +5,6 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 int f(int t, int c, char *a)
 {
-     if (t > 1) {
-	  if (t < 3)
-	       f(-79,
-		 -13,
-		 a + f(-87,
-		       1 - c,
-		       a + f(-86, 0, a+1)));
-	  if (t < c)
-	       f(t + 1, c, a);
-	  if (f(-94, -27 + t, a) && t == 2) {
-	       if (c < 13)
-		    return f(2, c+1, "%s %d %d\n");
-	       return 9;
-	  }
-	  return 16;
-     }
      if (t < -72)
 	  return f(c, t, S1);
      if (t < -50) {
@@ -30,11 +14,26 @@ int f(int t, int c, char *a)
      }
      if (t < 0)
 	  return f((*a == '/') + t, c, a+1);
-     if (t > 0)
+     if (t == 1)
 	  return f(2, 2, "%s");
-     return (*a == '/' || f(0,
-			    f(-61, *a, S2),
-			    a+1));
+     if (t == 0)
+	  return (*a == '/' || f(0,
+				 f(-61, *a, S2),
+				 a+1));
+     if (t < 3)
+	  f(-79,
+	    -13,
+	    a + f(-87,
+		  1 - c,
+		  a + f(-86, 0, a+1)));
+     if (t < c)
+	  f(t + 1, c, a);
+     if (f(-94, -27 + t, a) && t == 2) {
+	  if (c < 13)
+	       return f(2, c+1, "%s %d %d\n");
+	  return 9;
+     }
+     return 16;
 }
 
 int main() {
