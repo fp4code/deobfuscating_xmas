@@ -20,17 +20,17 @@ int f(int t, int c, char *a)
 	       return 9;
 	  }
 	  return 16;
-     } else
-	  if (t < 0) {
-	       if (t < -72)
-		    return f(c, t, S1);
-	       if (t < -50) {
-		    if (c == *a)
-		         return putchar(32[a-1]);
-		    return f(-65, c, a+1);
-	       }
-	       return f((*a == '/') + t, c, a+1);
+     }
+     if (t < 0) {
+	  if (t < -72)
+	       return f(c, t, S1);
+	  if (t < -50) {
+	       if (c == *a)
+		    return putchar(32[a-1]);
+	       return f(-65, c, a+1);
 	  }
+	  return f((*a == '/') + t, c, a+1);
+     }
      if (0 < t)
 	  return f(2, 2, "%s");
      return (*a == '/' || f(0, 
