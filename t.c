@@ -5,17 +5,16 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 int f(int t, int c, char *a)
 {
-     if (t < -72)
-	  return f(c, t, S1);
-     // t if never < 50
      if (t < 0)
-	  if (*a == '/')
+	  if (*a == '/') {
 	      return f(t + 1, c, a + 1);
-	  else
+	  } else {
 	      return f(t, c, a + 1);
+	  }
      if (t == 0)
-	  if (*a == '/')
-	       return 1;
+	  if (*a == '/') {
+	      return 1;
+	  }
 	  else {
 	       char *s = S2;
 	       while (*a != *s++);
@@ -29,7 +28,7 @@ int f(int t, int c, char *a)
      }
      if (t < c)
 	  f(t + 1, c, a);
-     if (f(-94, -27 + t, a) == 0)
+     if (f(-27 + t, -94, S1) == 0)
 	  return 16;
      if (t != 2)
 	  return 16;
