@@ -25,10 +25,6 @@ char *skip_slash(int n, char *a)
 
 void f(int t, int c, char *a)
 {
-     if (t <= 0) {
-	  f0(skip_slash(-t, a));
-	  return;
-     }	  
      if (t < 3) {
 	  //  12 times here
 	  f0(S1);
