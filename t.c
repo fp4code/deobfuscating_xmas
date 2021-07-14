@@ -14,32 +14,28 @@ int f(int t, int c, char *a)
 		       a + f(-86, 0, a+1)));
 	  if (t < c)
 	       f(t + 1, c, a);
-	  if (f(-94, -27 + t, a) && t == 2)
+	  if (f(-94, -27 + t, a) && t == 2) {
 	       if (c < 13)
 		    return f(2, c+1, "%s %d %d\n");
-	       else
-		    return 9;
-	  else
-	       return 16;
+	       return 9;
+	  }
+	  return 16;
      } else
-	  if (t < 0)
+	  if (t < 0) {
 	       if (t < -72)
 		    return f(c, t, S1);
-	       else
-		    if (t < -50)
-			 if (c == *a)
-			      return putchar(32[a-1]);
-			 else
-			      return f(-65, c, a+1);
-		    else
-			 return f((*a == '/') + t, c, a+1);
-	  else 
-	       if (0 < t)
-		    return f(2, 2, "%s");
-	       else
-		    return (*a == '/' || f(0, 
-					   f(-61, *a, S2),
-					   a+1));
+	       if (t < -50) {
+		    if (c == *a)
+		         return putchar(32[a-1]);
+		    return f(-65, c, a+1);
+	       }
+	       return f((*a == '/') + t, c, a+1);
+	  }
+     if (0 < t)
+	  return f(2, 2, "%s");
+     return (*a == '/' || f(0, 
+			    f(-61, *a, S2),
+			    a+1));
 }
 
 int main() {
