@@ -25,24 +25,25 @@ char *skip_slash(int n, char *a)
 
 void f(int t, int c, char *a)
 {
-     if (t < 3) {
+     // fprintf(stderr, "%d %d\n", t, c);
+     if (t == 0) {
 	  //  12 times here
 	  f0(S1);
 	  f0(skip_slash(c - 1, S1));
 	  f0(skip_slash(13, S1));
      }
-     if (t < c) {
+     if (t + 2 < c) {
 	  f(t + 1, c, a);
      }
-     f0(skip_slash(27 - t, S1));
-     if (t == 2 && c <= 12)
+     f0(skip_slash(25 - t, S1));
+     if (t == 0 && c <= 12)
 	  // 11 times here
-	  f(2, c + 1, "%s %d %d\n");
+	  f(0, c + 1, "%s %d %d\n");
      // One time here
      return;
 }
 
 int main() {
-     f(2, 2, "%s");
+     f(0, 2, "%s");
      return 0;
 }
