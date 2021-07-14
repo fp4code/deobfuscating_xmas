@@ -29,11 +29,10 @@ int f(int t, int c, char *a)
 			     S1);
 	       else
 		    if (t < -50)
-			 return  ((c == *a)
-				  ?
-				  putchar(32[a-1])
-				  :
-				  f(-65, c, a+1));
+			 if (c == *a)
+			      return putchar(32[a-1]);
+			 else
+			      return f(-65, c, a+1);
 		    else
 			 return f((*a == '/') + t, c, a+1);
 	  else 
