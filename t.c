@@ -6,6 +6,7 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 void fl(int c, char *a)
 {
+     // fprintf(stderr, "YES\n");
      while (c != *a++);
      putchar(a[30]);
 }
@@ -16,10 +17,7 @@ int f(int t, int c, char *a)
 {
      if (t < -72)
 	  return f(c, t, S1);
-     if (t < -50) {
-	  fl(c, a);
-	  return 0; // or any other value;
-     }
+     // t if never < 50
      if (t < 0)
 	  if (*a == '/')
 	      return f(t + 1, c, a + 1);
@@ -29,6 +27,7 @@ int f(int t, int c, char *a)
 	  if (*a == '/')
 	       return 1;
 	  else {
+	       // fprintf(stderr, "Here a call 2\n");
 	       fl(*a, S2);
 	       return f(0, 0, a + 1); // unused second argument
 	  }
