@@ -28,15 +28,14 @@ int f(int t, int c, char *a)
 			     t,
 			     S1);
 	       else
-		    return ((t < -50)
-			    ?
-			    ((c == *a)
-			     ?
-			     putchar(32[a-1])
-			     :
-			     f(-65, c, a+1))
-			    :
-			    f((*a == '/') + t, c, a+1));
+		    if (t < -50)
+			 return  ((c == *a)
+				  ?
+				  putchar(32[a-1])
+				  :
+				  f(-65, c, a+1));
+		    else
+			 return f((*a == '/') + t, c, a+1);
 	  else 
 	       return ((0 < t)
 		       ?
