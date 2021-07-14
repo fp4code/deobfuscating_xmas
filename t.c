@@ -5,7 +5,7 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 int f(int t,int c,char *a) 
 { 
-     return ((!0 < t)
+     return ((t > 1)
 	     ?
 	     ((t < 3)
 	      ?
