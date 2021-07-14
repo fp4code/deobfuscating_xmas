@@ -13,18 +13,22 @@ void f0(char *a)
 	  a += 1;
      }
 }
-     
+
+char *skip_slash(int n, char *a)
+{
+     while (n > 0) {
+	  while(*a++ != '/');
+	  n -= 1;
+     }
+     return a;
+}
 
 void f(int t, int c, char *a)
 {
-     while (t < 0) {
-	  while(*a++ != '/');
-	  t += 1;
-     }
-     if (t == 0) {
-	  f0(a);
+     if (t <= 0) {
+	  f0(skip_slash(-t, a));
 	  return;
-     }
+     }	  
      if (t < 3) {
 	  //  12 times here
 	  f0(S1);
