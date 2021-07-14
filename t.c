@@ -3,14 +3,22 @@
 char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/+k#;q#'r}eKK#}w'r}eKK{nl]'/#;#q#n'){)#}w'){){nl]'/+#n';d}rw' i;# ){nl]!/n{n#'; r{#w'r nc{nl]'/#{l,+'K {rw' iK{;[{nl]'/w#q#n'wk nw' iwk{KK{nl]!/w{%'l' i; :{nl]'/*{q#'ld;r'}{nlwb!/*de}'c ;;{nl'-{}rw]'/+,}##'*}#nc,',#nw]'/+kd'+e}+;#'rdq#w! nr'/ ') }+}{rl#'{n' ')# }'+}##(!!/";
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
+
+int fl(int t, int c, char *a)
+{
+     if (c == *a)
+	  return putchar(32[a-1]);
+     return fl(-65, c, a+1);
+}
+
+
+
 int f(int t, int c, char *a)
 {
      if (t < -72)
 	  return f(c, t, S1);
      if (t < -50) {
-	  if (c == *a)
-	       return putchar(32[a-1]);
-	  return f(-65, c, a+1);
+	  return fl(t, c, a);
      }
      if (t < 0)
 	  if (*a == '/')
@@ -21,7 +29,7 @@ int f(int t, int c, char *a)
 	  if (*a == '/')
 	       return 1;
 	  else {
-	       int cc = f(-61, *a, S2);
+	       int cc = fl(-61, *a, S2);
 	       return f(0, cc, a + 1);
 	  }
      if (t < 3) {
