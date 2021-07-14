@@ -1,48 +1,81 @@
 #include <stdio.h>
 
-char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/+k#;q#'r}eKK#}w'r}eKK{nl]'/#;#q#n'){)#}w'){){nl]'/+#n';d}rw' i;# ){nl]!/n{n#'; r{#w'r nc{nl]'/#{l,+'K {rw' iK{;[{nl]'/w#q#n'wk nw' iwk{KK{nl]!/w{%'l' i; :{nl]'/*{q#'ld;r'}{nlwb!/*de}'c ;;{nl'-{}rw]'/+,}##'*}#nc,',#nw]'/+kd'+e}+;#'rdq#w! nr'/ ') }+}{rl#'{n' ')# }'+}##(!!/";
-char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
-
-
-void f0(char *a)
+void print_at_slash(int n)
 {
+     char *a =
+//        "On the "
+	  "@n'+,#'/"
+//        "first"
+	  "*{}w+/"
+//        "second"
+	  "w#cdnr/"
+//        "third"
+	  "+,{}r/"
+//        "fourth"
+	  "*de}+,/"
+//        "fifth"
+	  "*{*+,/"
+//        "sixth"
+	  "w{%+,/"
+//        "seventh"
+	  "w#q#n+,/"
+//        "eight"
+	  "#{l+,/"
+//        "ninth"
+	  "n{n+,/"
+//        "tenth"
+	  "+#n+,/"
+//        "eleventh"
+	  "#;#q#n+,/"
+//        "tweofth"
+	  "+k#;*+,/"
+//        " day of Christmas my true love gave to me\n"
+	  "'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/"
+//        "twelve drummers drumming, "
+	  "+k#;q#'r}eKK#}w'r}eKK{nl]'/"
+//        "eleven pipers piping, "
+	  "#;#q#n'){)#}w'){){nl]'/"
+//        "ten lords a-leaping,\n"
+	  "+#n';d}rw' i;# ){nl]!/"
+//        "nine ladies dancing, "
+	  "n{n#'; r{#w'r nc{nl]'/"
+//        "eight maids a-milking, "
+	  "#{l,+'K {rw' iK{;[{nl]'/"
+//        "seven swans a-swimming,\n"
+	  "w#q#n'wk nw' iwk{KK{nl]!/"
+//        "six g a-laying, "
+	  "w{%'l' i; :{nl]'/"
+//        "five gold rings;\n"
+	  "*{q#'ld;r'}{nlwb!/"
+//        "four calling birds, "
+	  "*de}'c ;;{nl'-{}rw]'/"
+//        "three french hens, "
+	  "+,}##'*}#nc,',#nw]'/"
+//        "two turtle doves\n and "
+	  "+kd'+e}+;#'rdq#w! nr'/"
+//        "a partridge in a pear tree.\n\n"
+	  " ') }+}{rl#'{n' ')# }'+}##(!!/";
+     while (n > 0) {
+	  while(*a++ != '/');
+	  n -= 1;
+     }
      while (*a != '/') {
-	  char *s = S2;
+	  char *s = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 	  while (*a != *s++);
 	  putchar(s[30]);
 	  a += 1;
      }
 }
 
-char *skip_slash(int n, char *a)
+int main()
 {
-     while (n > 0) {
-	  while(*a++ != '/');
-	  n -= 1;
+     for (int c = 0; c < 12; c++) {
+	  print_at_slash(0);
+	  print_at_slash(c + 1);
+	  print_at_slash(13);
+	  for (int i = 25 - c; i < 26; i++) {
+	       print_at_slash(i);
+	  }
      }
-     return a;
-}
-
-void fcommon(int t, int c, char *a)
-{
-     for (int i = 25 - c; i < 26; i++) {
-	  f0(skip_slash(i, S1));
-     }
-}
-
-void fmain(int c, char *a)
-{
-     for (c = 0; c < 12; c++) {
-	  if (c != 0)
-	       a = "%s %d %d\n";
-	  f0(S1);
-	  f0(skip_slash(c + 1, S1));
-	  f0(skip_slash(13, S1));
-	  fcommon(0, c, a);
-     }
-}
-
-int main() {
-     fmain(0, "%s");
      return 0;
 }
