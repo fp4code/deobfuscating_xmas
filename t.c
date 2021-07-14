@@ -6,13 +6,13 @@ char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 int f0(char *a)
 {
-     if (*a == '/') {
-	  return 1;
+     while (*a != '/') {
+	  char *s = S2;
+	  while (*a != *s++);
+	  putchar(s[30]);
+	  a += 1;
      }
-     char *s = S2;
-     while (*a != *s++);
-     putchar(s[30]);
-     return f0(a + 1);
+     return 1;
 }
      
 
