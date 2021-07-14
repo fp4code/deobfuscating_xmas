@@ -4,10 +4,10 @@ char *S1 = "@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l+,/n{n+,/+#
 char *S2 = "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry";
 
 
-int fl(int c, char *a)
+void fl(int c, char *a)
 {
      while (c != *a++);
-     return putchar(a[30]);
+     putchar(a[30]);
 }
 
 
@@ -17,7 +17,8 @@ int f(int t, int c, char *a)
      if (t < -72)
 	  return f(c, t, S1);
      if (t < -50) {
-	  return fl(c, a);
+	  fl(c, a);
+	  return 0; // or any other value;
      }
      if (t < 0)
 	  if (*a == '/')
@@ -28,8 +29,8 @@ int f(int t, int c, char *a)
 	  if (*a == '/')
 	       return 1;
 	  else {
-	       int cc = fl(*a, S2);
-	       return f(0, cc, a + 1);
+	       fl(*a, S2);
+	       return f(0, 0, a + 1); // unused second argument
 	  }
      if (t < 3) {
 	  f(0, -86, S1);
